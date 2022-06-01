@@ -5,7 +5,7 @@ pipeline {
             agent any
             steps {
               withSonarQubeEnv('SonarQube Scanner') {
-                      sh 'mvn compaile'
+                      sh 'mvn compaile package sonar:sonar'
               }
             }
           }
