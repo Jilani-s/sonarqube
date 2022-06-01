@@ -1,20 +1,20 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage("build & SonarQube analysis") {
+        agent none
+        stages {
+          stage("build & SonarQube analysis") {
             agent any
             steps {
-              withSonarQubeEnv('jenkins-sonarqube') {
+              withSonarQubeEnv('My SonarQube Server') {
                 sh 'mvn clean package sonar:sonar'
               }
             }
           }
-    }
-    
-}
+          stage("Quality Gate") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
+        }
+      }
