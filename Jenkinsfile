@@ -5,7 +5,7 @@ pipeline {
             agent any
             steps {
               withSonarQubeEnv('SonarQube Scanner') {
-                      sh 'mvn clean verify'
+                      sh 'mvn compaile'
               }
             }
           }
