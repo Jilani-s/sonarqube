@@ -49,6 +49,12 @@
 
 	<dependencies>
 		
+		<dependency>
+  <groupId>org.apache.maven</groupId>
+  <artifactId>maven</artifactId>
+  <version>3.6.3</version>
+  <type>pom</type>
+</dependency>
     	<dependency>
             <groupId>org.mule.connectors</groupId>
             <artifactId>mule-http-connector</artifactId>
