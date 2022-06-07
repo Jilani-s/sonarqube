@@ -2,8 +2,10 @@ pipeline {
         agent any
         stages {
                 stage('SCM'){
-            
+            steps{
                 git 'https://github.com/Jilani-s/sonarqube.git'
+                
+            }
         }
           stage("build & SonarQube analysis") {
             agent any
