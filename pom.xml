@@ -15,6 +15,7 @@
 
 		<app.runtime>4.2.1</app.runtime>
 		<mule.maven.plugin.version>3.5.4</mule.maven.plugin.version>
+	    <mule.tools.version>1.7</mule.tools.version>
 	    
 	    <sonar.host.url>http://3.87.22.107:9000</sonar.host.url>
 	    <sonar.scm.provider>git</sonar.scm.provider>
@@ -38,6 +39,12 @@
 				<configuration>
 				</configuration>
 			</plugin>
+			<plugin>
+	<groupId>org.mule.tools.maven</groupId>
+	<artifactId>mule-app-maven-plugin</artifactId>
+	<version>${mule.tools.version}</version>
+	<extensions>true</extensions>
+</plugin>
 			<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
