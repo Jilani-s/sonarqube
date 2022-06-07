@@ -12,7 +12,8 @@ pipeline {
             steps {
               withSonarQubeEnv('SonarQube Scanner') {
                       withMaven(maven:'Maven 3.6.3') {
-                      sh 'mvn clean verify sonar:sonar'
+                      sh 'mvn clean install'
+                      sh 'mvn sonar:sonar -Dsonar.login=b8955d9ed743feb2c0fcbb2fa30532ec1489ba09'
               }
               }
             }
