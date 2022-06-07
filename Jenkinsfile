@@ -11,7 +11,7 @@ pipeline {
             agent any
             steps {
               withSonarQubeEnv('SonarQube Scanner') {
-                      sh 'mvn package sonar:sonar'
+                      sh 'mvn clean verify sonar:sonar'
               }
             }
           }
