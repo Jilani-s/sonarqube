@@ -28,7 +28,6 @@
 			**/qualitymeasurementsample/*
 		</sonar.coverage.exclusions>
 	</properties>
-<plugins>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
