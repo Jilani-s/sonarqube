@@ -11,7 +11,9 @@ pipeline {
             agent any
             steps {
               withSonarQubeEnv('SonarQube Scanner') {
+                      withMaven(maven:'Maven 3.6.3') {
                       sh 'mvn clean verify sonar:sonar'
+              }
               }
             }
           }
