@@ -13,8 +13,10 @@ pipeline {
               withSonarQubeEnv('SonarQube Scanner') {
                       withMaven(maven:'Maven 3.6.3') {
                       sh 'mvn clean install'
-                      sh 'mvn sonar:sonar -Dsonar.login=b8955d9ed743feb2c0fcbb2fa30532ec1489ba09'
-                      sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+                      sh 'mvn sonar:sonar \
+  -Dsonar.projectKey=POC-project \
+  -Dsonar.host.url=http://3.87.22.107:9000 \
+  -Dsonar.login=75183a7a6835a919d07dbeb85419f3e41aa26745'
               }
               }
             }
