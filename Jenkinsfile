@@ -1,11 +1,9 @@
 pipeline {
         agent any
         stages {
-                stage('Compile'){
-            steps{
-                sh script: 'mvn clean -U compile -s settings.xml'
-                
-            }
+                stage('SCM'){
+            
+                git 'https://github.com/Jilani-s/sonarqube.git'
         }
           stage("build & SonarQube analysis") {
             agent any
