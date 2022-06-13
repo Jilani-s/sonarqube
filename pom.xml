@@ -31,13 +31,17 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-				</configuration>
-			</plugin>
+  <groupId>org.mule.tools.maven</groupId>
+  <artifactId>mule-maven-plugin</artifactId>
+  <version>3.5.4</version>
+  <extensions>true</extensions>
+  <configuration>
+    <standaloneDeployment>
+      <muleHome>${mule.home.test}</muleHome>
+      <skip>true</skip>
+    </standaloneDeployment>
+  </configuration>
+</plugin>
 			
 			<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
